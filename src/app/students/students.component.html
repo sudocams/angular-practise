@@ -1,0 +1,81 @@
+
+<div class="container-fluid">
+    <div class="jumbotron vertical-center">
+        <h3>Registration</h3>
+    <form #userForm="ngForm" >
+      
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Enter name"  ([ngModel])="student.name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="Email"  ([ngModel])="student.email">
+        </div>
+        <div class="form-group">
+            <label for="email">phone</label>
+            <input type="number" class="form-control" name="phone" placeholder="phone number"  ([ngModel])="student.phone">
+          </div>
+
+          <div class="form-group">
+            <label>Team </label>
+            <select class="custom-select" name= "team" ([ngModel])="student.team">
+                <option selected> I'm joining: </option>
+                <option *ngFor="let team of teams"> {{ team }}</option>
+            </select>
+          </div >
+
+          <div class="form-group">
+            <label for="email">admin_no</label>
+            <input type="text" class="form-control" name="admin_no" placeholder="admission number"  ([ngModel])="student.admin_no">
+          </div>
+          <div class="form-group">
+            <label for="email">course</label>
+            <input type="text" class="form-control" name="course" placeholder="course"  ([ngModel])="student.course">
+          </div>
+
+        <div class="form-group">
+            <label> Academic year </label>
+            <select class="custom-select" name= "year" ([ngModel])="student.year">
+                <option selected> Iam in year:</option>
+                <option *ngFor="let year of years"> {{ year }}</option>
+            </select>
+          </div >
+          <div class="mb-3">
+            <label> Coding day preference </label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="daypreference" value="friday" ([ngModel])="student.daypreference">
+                <label class="form-check-label"> Thursday night</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="daypreference" value="thurday" ([ngModel])="student.daypreference">
+                <label class="form-check-label"> Friday night</label>
+              </div>
+            
+          </div>
+          <div class="form-group">
+            <label>Programming Language </label>
+            <input type="text" class="form-control" name="langauge" placeholder="language or idea"  ([ngModel])="student.langauge">
+          </div >
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name= "subscribe" ([ngModel])="student.subscribe">
+            <label class="form-check-label">
+                 Send me notifications and events
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label>Bio </label>
+            <textarea class="form-control rounded-0" rows="3" name="bio" ([ngModel])="student.bio"></textarea>
+          </div>
+
+        <div class="form-group">
+            <label for="ImageFile1">Choose your image</label>
+            <input type="file" name ="image" class="form-control-file" id="ImageFile1"  ([ngModel])="student.image">
+          </div>
+    
+        <button type="submit" class="btn btn-success" (click)="getApplications()">new Student</button>
+      </form>
+
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.vertical-center {
+    height:100%;
+    width:60%;
+    margin-left: 250px;
+    margin-top: 40px;
+  }
+.vertical-center h3{
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .vertical-center:before {
+     
+      display: none;
+    }
+  }
+  
+  .vertical-center:before {    /* create a full-height inline block pseudo=element */
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;    /* vertical alignment of the inline element */
+    height: 100%;
+  }
+  
+  .vertical-center > .container {
+    max-width:100%;
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */                        /* reset the font property */
+    font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
